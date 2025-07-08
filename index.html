@@ -11,6 +11,38 @@
 	</head>
 	<body class="is-preload">
 
+		<nav class="navbar" id="navbar">
+			<div class="navbar-container">
+				<a href="#banner" class="navbar-logo">Michelle Pastry</a>
+				<ul class="navbar-menu" id="navbar-menu">
+					<li class="navbar-item">
+						<a href="#banner" class="navbar-link active">Inicio</a>
+					</li>
+					<li class="navbar-item">
+						<a href="#historia" class="navbar-link">Historia</a>
+					</li>
+					<li class="navbar-item">
+						<a href="#emprende" class="navbar-link">Emprende</a>
+					</li>
+					<li class="navbar-item">
+						<a href="#productos" class="navbar-link">Productos</a>
+					</li>
+					<li class="navbar-item">
+						<a href="#contacto" class="navbar-link">Contacto</a>
+					</li>
+					<li class="navbar-item">
+						<a href="#tienda" class="navbar-link">Tienda</a>
+					</li>
+				</ul>
+				<div class="hamburger" id="hamburger">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</nav>
+
+
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
 
@@ -18,7 +50,7 @@
 					<div id="wrapper">
 
 						<!-- Panel (Banner) -->
-							<section class="panel banner right">
+							<section class="panel banner right" id="banner">
 								<div class="content color0 span-3-75">
 									<h1 class="major">Hola, mi nombre es Michelle Sanchez</h1>
 									<p>Bienvenido a <strong>Michelle Pastry</strong>, te invito a conocer mi proyecto que de reposteria. Mi inspiracion nacio hace 5 años atras, y aunque he atravesado diversos obstaculos, mi sueño, siempre ha sido el mismo. Mi propia patelería.</p>
@@ -32,7 +64,7 @@
 							</section>
 
 						<!-- Panel (Spotlight) -->
-							<section class="panel spotlight medium right" id="first">
+							<section class="panel spotlight medium right" id="historia">
 								<div class="content span-7">
 									<h2 class="major">HISTORIA</h2>
 									<p>Mi proyecto nace como una simple idea de negocio que presente en la universidad cuando estudie cocina, aunque siempre me desempeñaba en otras áreas de la cocina, sabía que quería emprender con algo que me gustara, y tuviera exito.</p>
@@ -43,7 +75,7 @@
 							</section>
 
 						<!-- Panel -->
-							<section class="panel color1">
+							<section class="panel color1" id="emprende">
 								<div class="intro joined">
 									<h2 class="major">EMPRENDE CON MICHELLE</h2>
 									<p>Genera ingresos adicionales vendiendo mis productos, pregunta por nuestra linea para emprendedores.</p>
@@ -62,7 +94,7 @@
 							</section>
 
 						<!-- Panel -->
-							<section class="panel">
+							<section class="panel" id="productos">
 								<div class="intro color2">
 									<h2 class="major">MIS PRODUCTOS</h2>
 									<p>Comparte conmigo mis experiencia, mi conocimiento y trayectoria.</p>
@@ -85,7 +117,7 @@
 							</section>
 
 						<!-- Panel -->
-							<section class="panel color4-alt">
+							<section class="panel color4-alt" id="contacto">
 								<div class="intro color4">
 									<h2 class="major">Contacto</h2>
 									<p>¿Deseas cotizar para tu proximo evento? No dudes en ponerte en contacto, en breve estaré en contacto contigo.</p>
@@ -121,64 +153,93 @@
 							</section>
 
 						<!-- Panel -->
-							<section class="panel color2-alt">
+							<section class="panel color2-alt" id="tienda">
 								<div class="intro color2">
-
-					<!--HASTA ACA-->
-									<h2 class="major">DOMICILIOS</h2>
-									<p></p>
-								</div>  
-								
+									<h2 class="major">Domicilios</h2>
+									<p>Ofrecemos servicio de entrega a domicilio, contactanos:</p>
+									<p><a href="tel:+573013123456">Llamar</a></p>
+									<p><a href="mailto:michellepastrychef@gmail.com">Email</a></p>
+									<p><a href="https://www.instagram.com/michellepastrychef?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a></p>
+								</div>
 								<div class="inner columns aligned">
 									<div class="span-2-75">
 
-										<h3 class="major">COMPRAS EN LINEA</h3>
-										<p>
-											Para compras en linea, puedes realizar tu pedido a traves de nuestro instagram, o bien, puedes escribirnos a nuestro correo electronico. Recuerda que debes realizar tu pedido con almenos 15 dias de anterioridad.
-										</p>
+										<h3 class="major">Compra en linea</h3>
+										<p>Compra tus productos favoritos desde la comodidad de tu hogar.</p>
+										<p>Recuerda que nuestros productos son elaborados de manera artesanal y
+											 con ingredientes de la más alta calidad.</p>
+											 <p>Todos nuestros productos son elaborados bajo pedido, por lo 
+												que es importante que realices tu pedido con anticipación.</p>
+										<p><b>¡Esperamos que disfrutes de nuestros productos!</b></p>
 
+										<ul class="actions">
+											<li><a href="#" class="button primary color2">Comprar</a></li>
+											<li><a href="#" class="button">Ver más</a></li>
 
-						<!---productos----->
-						<section class="productos-container">
+									</div>
+									<!---productos----->
+									<div class="span-3">
+										 <section class="productos-container">
 						        <section class="producto">
 									<article class="producto" data-id="p001">
 										<img src="TODO LO DE MI PAGINA WEB/torta 3.jpg" alt="">
-										<h2>Torta Red vetvel</h2>
-										<p>Tradicional torta red velvet, con relleno de crema de queso y decorada con crema chantilly.</p>
+										<h2>Torta Red velvet</h2>
+										<p>Tradicional torta red velvet, con relleno de crema de queso
+											 y decorada con crema chantilly.</p>
 										<div class="precio">$55.000</div>
-										<button onclick="agregarAlCarrito('p001')">Agregar al carrito</button>
-									</article>
-								<article class="producto" data-id="p002">
-										<img src="TODO LO DE MI PAGINA WEB/torta 10.jpg" alt="">
-										<h2>Torta de Chocolate</h2>
-										<p>Deliciosa torta de chocolate con relleno de crema de chocolate y decorada con ganache.</p>
-										<div class="precio">$60.000</div>
-										<button onclick="agregarAlCarrito('p002')">Agregar al carrito</button>
-									</article>
-                                <article class="producto" data-id="p003">
-										<img src="TODO LO DE MI PAGINA WEB/torta 6.jpg" alt="">
-										<h2>Torta de naranja</h2>
-										<p>Fresca torta de naranja con relleno de crema de naranja y decorada con glaseado de naranja.</p>
-										<div class="precio">$60.000</div>
-										<button onclick="agregarAlCarrito('p003')">Agregar al carrito</button>
-									</article>
-                                <article class="producto" data-id="p004">
-										<img src="TODO LO DE MI PAGINA WEB/torta 9.jpg" alt="">
-										<h2>Torta de zanahoria</h2>
-										<p>Exquisita torta de zanahoria con relleno de crema de queso y decorada con nueces.</p>
-										<button onclick="agregarAlCarrito('p004')">Agregar al carrito</button>
+										<button onclick="agregarAlCarrito('p001')">Añadir</button>
 									</article>
 								</section>
 							</section>
 									</div>
+									<div class="span-3">
+										 <section class="productos-container">
+								<section class="producto">
+								<article class="producto" data-id="p002">
+										<img src="TODO LO DE MI PAGINA WEB/torta 10.jpg" alt="">
+										<h2>Torta de Chocolate</h2>
+										<p>Deliciosa torta de chocolate con relleno de crema de chocolate 
+											y decorada con ganache.</p>
+										<div class="precio">$60.000</div>
+										<button onclick="agregarAlCarrito('p002')">Añadir</button>
+									</article>
+								</section>
+							</section>
 									</div>
+									<div class="span-3">
+										 <section class="productos-container">
+								<section class="producto">
+								<article class="producto" data-id="p003">
+										<img src="TODO LO DE MI PAGINA WEB/torta 6.jpg" alt="">
+										<h2>Torta de naranja</h2>
+										<p>Fresca torta de naranja con relleno de crema de naranja y decorada con glaseado de naranja.</p>
+										<div class="precio">$60.000</div>
+										<button onclick="agregarAlCarrito('p003')">Añadir</button>
+									</article>
+								</section>
+							</section>
+									</div>
+									<div class="span-3">
+										 <section class="productos-container">
+								<section class="producto">
+								<article class="producto" data-id="p004">
+										<img class="zanahoria" src="TODO LO DE MI PAGINA WEB/torta 9.jpg" alt="">
+										<h2>Torta de zanahoria</h2>
+										<p>Exquisita torta de zanahoria con relleno de crema de queso y decorada con nueces.</p>
+										<div class="precio">$65.000</div>
+										<button onclick="agregarAlCarrito('p004')">Añadir</button>
+									</article>
+								</section>
+							</section>
+									</div>
+									
+
 						<!-- Copyright -->
-							<div class="copyright">&copy;Derechos Reservado, Michel Sanchez Villalobos</div>
+							<div class="copyright">&copy; Todos los derechos reservados: Michel Sanchez Villalobos.</div>
 
 					</div>
 
 			</div>
-
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
