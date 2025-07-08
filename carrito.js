@@ -22,100 +22,112 @@ const productos = {
   }
 };
 
+// Obtener carrito desde localStorage
 function obtenerCarrito() {
-    return JSON.parse(localStorage.getItem('carrito')) || [];
+  return JSON.parse(localStorage.getItem('carrito')) || [];
 }
 
+// Guardar carrito en localStorage
 function guardarCarrito(carrito) {
-    localStorage.setItem('carrito', JSON.stringify(carrito));
+  localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
+// Contar la cantidad de cada producto
 function contarProductos(carrito) {
-    const contador = {};
-    carrito.forEach(id => {
-        contador[id] = (contador[id] || 0) + 1;
-    });
-    return contador;
+  const contador = {};
+  carrito.forEach(id => {
+    contador[id] = (contador[id] || 0) + 1;
+  });
+  return contador;
 }
 
+// Mostrar carrito en tabla
 function mostrarCarrito() {
-    const tbody = document.querySelector('#tabla-carrito tbody');
-    tbody.innerHTML = '';
-    const carrito = obtenerCarrito();
-    const contador = contarProductos(carrito);
-    let totalFinal = 0;
+  const tbody = document.querySelector('#tabla-carrito tbody');
+  if (!tbody) {
+    console.error("No se encontró el tbody con id 'tabla-carrito'");
+    return;
+  }
 
-    Object.keys(contador).forEach(id => {
-        const cantidad = contador[id];
-        const producto = productos[id];
+  tbody.innerHTML = ''; // Limpiar tabla
+  const carrito = obtenerCarrito();
+  const contador = contarProductos(carrito);
+  let totalFinal = 0;
 
-        if (producto) {
-            const total = producto.precio * cantidad;
-            totalFinal += total;
+  Object.keys(contador).forEach(id => {
+    const cantidad = contador[id];
+    const producto = productos[id];
 
-            const fila = document.createElement('tr');
-            fila.innerHTML = `
-            <td><img src="${producto.imagen}" alt="${producto.nombre}"></td>
-            <td>${producto.nombre}</td>
-            <td>$${producto.precio.toLocaleString()}</td>
-            <td>
-            <button onclick="cambiarCantidad('${id}', -1)">–</button>
-            ${cantidad}
-            <button onclick="cambiarCantidad('${id}', 1)">+</button>
-            </td>
-            // <td>${cantidad}</td>
-            <td>$${total.toLocaleString()}</td>
-            <td><button onclick="eliminarProducto('${id}')">Eliminar</button></td>
-          `;
-            tbody.appendChild(fila);
-        }
-    });
+    if (producto) {
+      const total = producto.precio * cantidad;
+      totalFinal += total;
 
-    document.getElementById('total-final').textContent = `Total a pagar: $${totalFinal.toLocaleString()}`;
+      const fila = document.createElement('tr');
+      fila.innerHTML = `
+        <td><img src="${producto.imagen}" alt="${producto.nombre}" width="80"></td>
+        <td>${producto.nombre}</td>
+        <td>$${producto.precio.toLocaleString()}</td>
+        <td>
+          <button onclick="cambiarCantidad('${id}', -1)">–</button>
+          ${cantidad}
+          <button onclick="cambiarCantidad('${id}', 1)">+</button>
+        </td>
+        <td>$${total.toLocaleString()}</td>
+        <td><button onclick="eliminarProducto('${id}')">Eliminar</button></td>
+      `;
+      tbody.appendChild(fila);
+    }
+  });
+
+  document.getElementById('total-final').textContent = `Total a pagar: $${totalFinal.toLocaleString()}`;
 }
 
+// Cambiar cantidad de un producto
 function cambiarCantidad(id, delta) {
-    let carrito = obtenerCarrito();
-    if (delta > 0) {
-        carrito.push(id);
-    } else {
-        const index = carrito.indexOf(id);
-        if (index !== -1) {
-            carrito.splice(index, 1);
-        }
+  let carrito = obtenerCarrito();
+  if (delta > 0) {
+    carrito.push(id);
+  } else {
+    const index = carrito.indexOf(id);
+    if (index !== -1) {
+      carrito.splice(index, 1);
     }
+  }
 
-    if (carrito.includes(id)) {
-        guardarCarrito(carrito);
-    } else {
-        eliminarProducto(id); // si se quedó en cero, eliminar completamente
-    }
-
-    mostrarCarrito();
-}
-
-function eliminarProducto(id) {
-    let carrito = obtenerCarrito();
-    carrito = carrito.filter(pid => pid !== id);
+  if (carrito.includes(id)) {
     guardarCarrito(carrito);
-    mostrarCarrito();
+  } else {
+    eliminarProducto(id); // Si se queda en cero, eliminar
+  }
+
+  mostrarCarrito();
 }
 
+// Eliminar producto completamente
+function eliminarProducto(id) {
+  let carrito = obtenerCarrito();
+  carrito = carrito.filter(pid => pid !== id);
+  guardarCarrito(carrito);
+  mostrarCarrito();
+}
+
+// Vaciar todo el carrito
 function vaciarCarrito() {
-    localStorage.removeItem('carrito');
-    mostrarCarrito();
+  localStorage.removeItem('carrito');
+  mostrarCarrito();
 }
 
+// Finalizar compra
 function comprar() {
-    const carrito = obtenerCarrito();
-    if (carrito.length === 0) {
-        alert("Tu carrito está vacío.");
-        return;
-    }
+  const carrito = obtenerCarrito();
+  if (carrito.length === 0) {
+    alert("Tu carrito está vacío.");
+    return;
+  }
 
-    alert("¡Compra realizada con éxito!");
-    vaciarCarrito();
+  alert("¡Compra realizada con éxito!");
+  vaciarCarrito();
 }
 
-// Inicializar
+// Inicializar carrito al cargar la página
 mostrarCarrito();
