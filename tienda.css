@@ -1,0 +1,20 @@
+.productos-container {
+  display: flex;
+  flex-wrap: wrap; /* O usa nowrap si quieres solo una fila horizontal */
+  gap: 20px;
+  justify-content: center; /* Puedes usar start, space-between, etc. */
+  padding: 20px 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+.producto {
+  width: 250px;
+  padding: 10px;
+  text-align: center;
+}
+
+.producto img {
+  width: 100%;
+  height: auto;
+}
