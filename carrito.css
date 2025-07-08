@@ -1,0 +1,306 @@
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+/* Título principal */
+h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* Contenedor de acciones */
+.acciones {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.acciones button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.acciones .vaciar {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+    color: white;
+}
+
+.acciones .vaciar:hover {
+    background: linear-gradient(45deg, #ee5a52, #ff6b6b);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(238, 90, 82, 0.4);
+}
+
+.acciones .comprar {
+    background: linear-gradient(45deg, #4ecdc4, #44a08d);
+    color: white;
+}
+
+.acciones .comprar:hover {
+    background: linear-gradient(45deg, #44a08d, #4ecdc4);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(68, 160, 141, 0.4);
+}
+
+.acciones button:last-child {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+}
+
+.acciones button:last-child:hover {
+    background: linear-gradient(45deg, #764ba2, #667eea);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(118, 75, 162, 0.4);
+}
+
+/* Contenedor de la tabla */
+#tabla-carrito {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+}
+
+/* Encabezado de la tabla */
+#tabla-carrito thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+#tabla-carrito th {
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+}
+
+/* Cuerpo de la tabla */
+#tabla-carrito tbody tr {
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+#tabla-carrito tbody tr:hover {
+    background: rgba(102, 126, 234, 0.05);
+    transform: scale(1.01);
+}
+
+#tabla-carrito td {
+    padding: 20px 15px;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+/* Imagen del producto */
+#tabla-carrito td img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Nombre del producto */
+#tabla-carrito td:nth-child(2) {
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Precio */
+#tabla-carrito td:nth-child(3),
+#tabla-carrito td:nth-child(5) {
+    font-weight: 700;
+    color: #4ecdc4;
+    font-size: 16px;
+}
+
+/* Cantidad */
+#tabla-carrito td:nth-child(4) {
+    font-weight: 600;
+    color: #667eea;
+    font-size: 16px;
+}
+
+/* Botones de acción en la tabla */
+#tabla-carrito button {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#tabla-carrito button:hover {
+    background: linear-gradient(45deg, #ee5a52, #ff6b6b);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(238, 90, 82, 0.4);
+}
+
+/* Total final */
+.total {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    max-width: 400px;
+    margin: 30px auto;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* Mensaje de carrito vacío */
+.carrito-vacio {
+    text-align: center;
+    color: #333;
+    font-size: 1.5rem;
+    margin: 50px 0;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    
+    .acciones {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .acciones button {
+        width: 100%;
+        max-width: 300px;
+        margin: 5px 0;
+    }
+    
+    #tabla-carrito {
+        font-size: 12px;
+    }
+    
+    #tabla-carrito th,
+    #tabla-carrito td {
+        padding: 10px 8px;
+    }
+    
+    #tabla-carrito td img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .total {
+        font-size: 1.5rem;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    #tabla-carrito {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    #tabla-carrito table {
+        width: 100%;
+        min-width: 600px;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#tabla-carrito tbody tr {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Efectos adicionales */
+.acciones button:active {
+    transform: translateY(0);
+}
+
+#tabla-carrito tbody tr:last-child {
+    border-bottom: none;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #764ba2, #667eea);
+}
